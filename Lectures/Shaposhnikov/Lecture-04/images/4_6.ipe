@@ -1,0 +1,738 @@
+<?xml version="1.0"?>
+<!DOCTYPE ipe SYSTEM "ipe.dtd">
+<ipe version="70218" creator="Ipe 7.2.23">
+<info created="D:20210223084916" modified="D:20210223085528"/>
+<ipestyle name="basic">
+<symbol name="arrow/arc(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/farc(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/ptarc(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/fptarc(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="mark/circle(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</symbol>
+<symbol name="mark/disk(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+</path>
+</symbol>
+<symbol name="mark/fdisk(sfx)" transformations="translations">
+<group>
+<path fill="sym-fill">
+0.5 0 0 0.5 0 0 e
+</path>
+<path fill="sym-stroke" fillrule="eofill">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</group>
+</symbol>
+<symbol name="mark/box(sx)" transformations="translations">
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</symbol>
+<symbol name="mark/square(sx)" transformations="translations">
+<path fill="sym-stroke">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+</path>
+</symbol>
+<symbol name="mark/fsquare(sfx)" transformations="translations">
+<group>
+<path fill="sym-fill">
+-0.5 -0.5 m
+0.5 -0.5 l
+0.5 0.5 l
+-0.5 0.5 l
+h
+</path>
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="mark/cross(sx)" transformations="translations">
+<group>
+<path fill="sym-stroke">
+-0.43 -0.57 m
+0.57 0.43 l
+0.43 0.57 l
+-0.57 -0.43 l
+h
+</path>
+<path fill="sym-stroke">
+-0.43 0.57 m
+0.57 -0.43 l
+0.43 -0.57 l
+-0.57 0.43 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="arrow/fnormal(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/pointed(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/fpointed(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/linear(spx)">
+<path stroke="sym-stroke" pen="sym-pen">
+-1 0.333 m
+0 0 l
+-1 -0.333 l
+</path>
+</symbol>
+<symbol name="arrow/fdouble(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/double(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-normal(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0.5 0 m
+-0.5 0.333 l
+-0.5 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-fnormal(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0.5 0 m
+-0.5 0.333 l
+-0.5 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-pointed(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0.5 0 m
+-0.5 0.333 l
+-0.3 0 l
+-0.5 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-fpointed(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0.5 0 m
+-0.5 0.333 l
+-0.3 0 l
+-0.5 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-double(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+1 0 m
+0 0.333 l
+0 -0.333 l
+h
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-fdouble(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+1 0 m
+0 0.333 l
+0 -0.333 l
+h
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<anglesize name="22.5 deg" value="22.5"/>
+<anglesize name="30 deg" value="30"/>
+<anglesize name="45 deg" value="45"/>
+<anglesize name="60 deg" value="60"/>
+<anglesize name="90 deg" value="90"/>
+<arrowsize name="large" value="10"/>
+<arrowsize name="small" value="5"/>
+<arrowsize name="tiny" value="3"/>
+<color name="blue" value="0 0 1"/>
+<color name="brown" value="0.647 0.165 0.165"/>
+<color name="darkblue" value="0 0 0.545"/>
+<color name="darkcyan" value="0 0.545 0.545"/>
+<color name="darkgray" value="0.663"/>
+<color name="darkgreen" value="0 0.392 0"/>
+<color name="darkmagenta" value="0.545 0 0.545"/>
+<color name="darkorange" value="1 0.549 0"/>
+<color name="darkred" value="0.545 0 0"/>
+<color name="gold" value="1 0.843 0"/>
+<color name="gray" value="0.745"/>
+<color name="green" value="0 1 0"/>
+<color name="lightblue" value="0.678 0.847 0.902"/>
+<color name="lightcyan" value="0.878 1 1"/>
+<color name="lightgray" value="0.827"/>
+<color name="lightgreen" value="0.565 0.933 0.565"/>
+<color name="lightyellow" value="1 1 0.878"/>
+<color name="navy" value="0 0 0.502"/>
+<color name="orange" value="1 0.647 0"/>
+<color name="pink" value="1 0.753 0.796"/>
+<color name="purple" value="0.627 0.125 0.941"/>
+<color name="red" value="1 0 0"/>
+<color name="seagreen" value="0.18 0.545 0.341"/>
+<color name="turquoise" value="0.251 0.878 0.816"/>
+<color name="violet" value="0.933 0.51 0.933"/>
+<color name="yellow" value="1 1 0"/>
+<dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
+<dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
+<dashstyle name="dashed" value="[4] 0"/>
+<dashstyle name="dotted" value="[1 3] 0"/>
+<gridsize name="10 pts (~3.5 mm)" value="10"/>
+<gridsize name="14 pts (~5 mm)" value="14"/>
+<gridsize name="16 pts (~6 mm)" value="16"/>
+<gridsize name="20 pts (~7 mm)" value="20"/>
+<gridsize name="28 pts (~10 mm)" value="28"/>
+<gridsize name="32 pts (~12 mm)" value="32"/>
+<gridsize name="4 pts" value="4"/>
+<gridsize name="56 pts (~20 mm)" value="56"/>
+<gridsize name="8 pts (~3 mm)" value="8"/>
+<opacity name="10%" value="0.1"/>
+<opacity name="30%" value="0.3"/>
+<opacity name="50%" value="0.5"/>
+<opacity name="75%" value="0.75"/>
+<pen name="fat" value="1.2"/>
+<pen name="heavier" value="0.8"/>
+<pen name="ultrafat" value="2"/>
+<symbolsize name="large" value="5"/>
+<symbolsize name="small" value="2"/>
+<symbolsize name="tiny" value="1.1"/>
+<textsize name="Huge" value="\Huge"/>
+<textsize name="LARGE" value="\LARGE"/>
+<textsize name="Large" value="\Large"/>
+<textsize name="footnote" value="\footnotesize"/>
+<textsize name="huge" value="\huge"/>
+<textsize name="large" value="\large"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
+<textstyle name="center" begin="\begin{center}" end="\end{center}"/>
+<textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
+<textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
+<tiling name="falling" angle="-60" step="4" width="1"/>
+<tiling name="rising" angle="30" step="4" width="1"/>
+</ipestyle>
+<page>
+<layer name="alpha"/>
+<layer name="beta"/>
+<view layers="alpha beta" active="beta"/>
+<group layer="alpha" matrix="1 0 0 1 32 -96">
+<path stroke="black" fill="white" pen="fat" arrow="normal/normal">
+128 608 m
+320 608 l
+</path>
+<path stroke="black" fill="white">
+144 610.5 m
+144 605.5 l
+</path>
+<path stroke="black" fill="white">
+160 610.5 m
+160 605.5 l
+</path>
+<path stroke="black" fill="white">
+176 610.5 m
+176 605.5 l
+</path>
+<path stroke="black" fill="white">
+192 610.5 m
+192 605.5 l
+</path>
+<path stroke="black" fill="white">
+208 610.5 m
+208 605.5 l
+</path>
+<path stroke="black" fill="white">
+224 610.5 m
+224 605.5 l
+</path>
+<path stroke="black" fill="white">
+240 610.5 m
+240 605.5 l
+</path>
+<path stroke="black" fill="white">
+256 610.5 m
+256 605.5 l
+</path>
+<path stroke="black" fill="white">
+272 610.5 m
+272 605.5 l
+</path>
+<path stroke="black" fill="white">
+288 610.5 m
+288 605.5 l
+</path>
+<path stroke="black" fill="white">
+304 610.5 m
+304 605.5 l
+</path>
+<path stroke="black" fill="white" pen="fat" arrow="normal/normal">
+224 576 m
+224 768 l
+</path>
+<path stroke="black" fill="white">
+226.5 592 m
+221.5 592 l
+</path>
+<path stroke="black" fill="white">
+226.5 608 m
+221.5 608 l
+</path>
+<path stroke="black" fill="white">
+226.5 624 m
+221.5 624 l
+</path>
+<path stroke="black" fill="white">
+226.5 640 m
+221.5 640 l
+</path>
+<path stroke="black" fill="white">
+226.5 656 m
+221.5 656 l
+</path>
+<path stroke="black" fill="white">
+226.5 672 m
+221.5 672 l
+</path>
+<path stroke="black" fill="white">
+226.5 688 m
+221.5 688 l
+</path>
+<path stroke="black" fill="white">
+226.5 704 m
+221.5 704 l
+</path>
+<path stroke="black" fill="white">
+226.5 720 m
+221.5 720 l
+</path>
+<path stroke="black" fill="white">
+226.5 736 m
+221.5 736 l
+</path>
+<path stroke="black" fill="white">
+226.5 752 m
+221.5 752 l
+</path>
+</group>
+<path stroke="black" pen="heavier">
+208 656 m
+208.323 654.061
+208.646 652.141
+208.97 650.241 c
+209.293 648.34
+209.616 646.46
+209.939 644.599 c
+210.263 642.738
+210.586 640.896
+210.909 639.074 c
+211.232 637.253
+211.556 635.45
+211.879 633.668 c
+212.202 631.885
+212.525 630.122
+212.848 628.378 c
+213.172 626.635
+213.495 624.911
+213.818 623.207 c
+214.141 621.502
+214.465 619.818
+214.788 618.152 c
+215.111 616.487
+215.434 614.842
+215.758 613.216 c
+216.081 611.59
+216.404 609.983
+216.727 608.397 c
+217.051 606.81
+217.374 605.243
+217.697 603.695 c
+218.02 602.148
+218.343 600.62
+218.667 599.111 c
+218.99 597.603
+219.313 596.114
+219.636 594.645 c
+219.96 593.175
+220.283 591.726
+220.606 590.296 c
+220.929 588.866
+221.253 587.455
+221.576 586.064 c
+221.899 584.673
+222.222 583.302
+222.545 581.95 c
+222.869 580.599
+223.192 579.267
+223.515 577.954 c
+223.838 576.642
+224.162 575.349
+224.485 574.075 c
+224.808 572.802
+225.131 571.548
+225.455 570.314 c
+225.778 569.08
+226.101 567.865
+226.424 566.67 c
+226.747 565.475
+227.071 564.3
+227.394 563.144 c
+227.717 561.988
+228.04 560.852
+228.364 559.736 c
+228.687 558.619
+229.01 557.522
+229.333 556.444 c
+229.657 555.367
+229.98 554.309
+230.303 553.271 c
+230.626 552.233
+230.949 551.214
+231.273 550.215 c
+231.596 549.216
+231.919 548.236
+232.242 547.276 c
+232.566 546.316
+232.889 545.376
+233.212 544.455 c
+233.535 543.535
+233.859 542.634
+234.182 541.752 c
+234.505 540.871
+234.828 540.009
+235.152 539.166 c
+235.475 538.324
+235.798 537.501
+236.121 536.698 c
+236.444 535.895
+236.768 535.111
+237.091 534.347 c
+237.414 533.583
+237.737 532.839
+238.061 532.114 c
+238.384 531.389
+238.707 530.684
+239.03 529.998 c
+239.354 529.313
+239.677 528.646
+240 528 c
+240.323 527.354
+240.646 526.727
+240.97 526.119 c
+241.293 525.512
+241.616 524.924
+241.939 524.356 c
+242.263 523.788
+242.586 523.24
+242.909 522.711 c
+243.232 522.182
+243.556 521.672
+243.879 521.183 c
+244.202 520.693
+244.525 520.223
+244.848 519.772 c
+245.172 519.322
+245.495 518.891
+245.818 518.479 c
+246.141 518.068
+246.465 517.676
+246.788 517.304 c
+247.111 516.932
+247.434 516.579
+247.758 516.246 c
+248.081 515.913
+248.404 515.6
+248.727 515.306 c
+249.051 515.012
+249.374 514.738
+249.697 514.483 c
+250.02 514.228
+250.343 513.993
+250.667 513.778 c
+250.99 513.562
+251.313 513.366
+251.636 513.19 c
+251.96 513.014
+252.283 512.857
+252.606 512.72 c
+252.929 512.583
+253.253 512.465
+253.576 512.367 c
+253.899 512.269
+254.222 512.191
+254.545 512.132 c
+254.869 512.073
+255.192 512.034
+255.515 512.015 c
+255.838 511.995
+256.162 511.995
+256.485 512.015 c
+256.808 512.034
+257.131 512.073
+257.455 512.132 c
+257.778 512.191
+258.101 512.269
+258.424 512.367 c
+258.747 512.465
+259.071 512.583
+259.394 512.72 c
+259.717 512.857
+260.04 513.014
+260.364 513.19 c
+260.687 513.366
+261.01 513.562
+261.333 513.778 c
+261.657 513.993
+261.98 514.228
+262.303 514.483 c
+262.626 514.738
+262.949 515.012
+263.273 515.306 c
+263.596 515.6
+263.919 515.913
+264.242 516.246 c
+264.566 516.579
+264.889 516.932
+265.212 517.304 c
+265.535 517.676
+265.859 518.068
+266.182 518.479 c
+266.505 518.891
+266.828 519.322
+267.152 519.772 c
+267.475 520.223
+267.798 520.693
+268.121 521.183 c
+268.444 521.672
+268.768 522.182
+269.091 522.711 c
+269.414 523.24
+269.737 523.788
+270.061 524.356 c
+270.384 524.924
+270.707 525.512
+271.03 526.119 c
+271.354 526.727
+271.677 527.354
+272 528 c
+272.323 528.646
+272.646 529.313
+272.97 529.998 c
+273.293 530.684
+273.616 531.389
+273.939 532.114 c
+274.263 532.839
+274.586 533.583
+274.909 534.347 c
+275.232 535.111
+275.556 535.895
+275.879 536.698 c
+276.202 537.501
+276.525 538.324
+276.848 539.166 c
+277.172 540.009
+277.495 540.871
+277.818 541.752 c
+278.141 542.634
+278.465 543.535
+278.788 544.455 c
+279.111 545.376
+279.434 546.316
+279.758 547.276 c
+280.081 548.236
+280.404 549.216
+280.727 550.215 c
+281.051 551.214
+281.374 552.233
+281.697 553.271 c
+282.02 554.309
+282.343 555.367
+282.667 556.444 c
+282.99 557.522
+283.313 558.619
+283.636 559.736 c
+283.96 560.852
+284.283 561.988
+284.606 563.144 c
+284.929 564.3
+285.253 565.475
+285.576 566.67 c
+285.899 567.865
+286.222 569.08
+286.545 570.314 c
+286.869 571.548
+287.192 572.802
+287.515 574.075 c
+287.838 575.349
+288.162 576.642
+288.485 577.954 c
+288.808 579.267
+289.131 580.599
+289.455 581.95 c
+289.778 583.302
+290.101 584.673
+290.424 586.064 c
+290.747 587.455
+291.071 588.866
+291.394 590.296 c
+291.717 591.726
+292.04 593.175
+292.364 594.645 c
+292.687 596.114
+293.01 597.603
+293.333 599.111 c
+293.657 600.62
+293.98 602.148
+294.303 603.695 c
+294.626 605.243
+294.949 606.81
+295.273 608.397 c
+295.596 609.983
+295.919 611.59
+296.242 613.216 c
+296.566 614.842
+296.889 616.487
+297.212 618.152 c
+297.535 619.818
+297.859 621.502
+298.182 623.207 c
+298.505 624.911
+298.828 626.635
+299.152 628.378 c
+299.475 630.122
+299.798 631.885
+300.121 633.668 c
+300.444 635.45
+300.768 637.253
+301.091 639.074 c
+301.414 640.896
+301.737 642.738
+302.061 644.599 c
+302.384 646.46
+302.707 648.34
+303.03 650.241 c
+303.354 652.141
+303.677 654.061
+304 656 c
+</path>
+<path stroke="black" dash="dashed">
+224 512 m
+224 576 l
+288 576 l
+288 512 l
+</path>
+<text matrix="1 0 0 1 -8 -8" transformations="translations" pos="272 672" stroke="black" type="label" width="7.364" height="6.176" depth="2.79" valign="baseline" size="Large">$y$</text>
+<text transformations="translations" pos="344 520" stroke="black" type="label" width="7.982" height="6.177" depth="0" valign="baseline" size="Large">$x$</text>
+<text matrix="1 0 0 1 0 -8" transformations="translations" pos="312 656" stroke="black" type="label" width="44.404" height="11.626" depth="2.79" valign="baseline" size="Large">$y = x^2$
+</text>
+<path layer="beta" stroke="red" pen="fat">
+256 576 m
+256 512 l
+288 512 l
+</path>
+<path stroke="green" fill="1" dash="dashed" pen="fat">
+160 512 m
+224 512 l
+</path>
+<path stroke="green" fill="1" dash="dashed" pen="fat">
+256 664 m
+256 576 l
+</path>
+</page>
+</ipe>

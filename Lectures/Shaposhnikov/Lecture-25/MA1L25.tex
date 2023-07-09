@@ -1,0 +1,214 @@
+\documentclass[12pt]{article}
+\usepackage[left=1cm, right=1cm, top=2cm,bottom=1.5cm]{geometry} 
+
+\usepackage[parfill]{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{enumitem}
+\usepackage[normalem]{ulem}
+\usepackage{amsfonts, amsmath, amsthm, amssymb, mathtools}
+
+\usepackage{accents}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\usepackage{graphicx}
+\usepackage[figurename=Рис.]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+%%Наименование папки откуда забирать изображения
+\graphicspath{ {./images/} }
+
+%%Изменение формата для ввода доказательства
+\renewcommand{\proofname}{$\square$  \nopunct}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\addto\captionsrussian{%
+	\renewcommand{\proofname}{$\square$ \nopunct}%
+}
+%% Римские цифры
+\newcommand{\RN}[1]{%
+	\textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+
+%% Для удобства записи
+\newcommand{\MR}{\mathbb{R}}
+\newcommand{\MQ}{\mathbb{Q}}
+\newcommand{\MI}{\mathrm{I}}
+\newcommand{\MJ}{\mathrm{J}}
+\newcommand{\MH}{\mathrm{H}}
+\newcommand{\MT}{\mathrm{T}}
+\newcommand{\MU}{\mathcal{U}}
+\newcommand{\MV}{\mathcal{V}}
+\newcommand{\VN}{\varnothing}
+\newcommand{\VE}{\varepsilon}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Опр:}
+\newtheorem{rem}{Rm:}
+\newtheorem{prop}{Утв.}
+\newtheorem{exrc}{Упр.}
+\newtheorem{lemma}{Лемма}
+\newtheorem{theorem}{Теорема}
+\newtheorem{corollary}{Следствие}
+
+\newenvironment{cusdefn}[1]
+{\renewcommand\thedefn{#1}\defn}
+{\enddefn}
+
+\DeclareRobustCommand{\divby}{%
+	\mathrel{\text{\vbox{\baselineskip.65ex\lineskiplimit0pt\hbox{.}\hbox{.}\hbox{.}}}}%
+}
+%Коротки минус
+\DeclareMathSymbol{\SMN}{\mathbin}{AMSa}{"39}
+
+\newcommand{\smallerrel}[1]{\mathrel{\mathpalette\smallerrelaux{#1}}}
+\newcommand{\smallerrelaux}[2]{\raisebox{.1ex}{\scalebox{.75}{$#1#2$}}}
+
+\newcommand{\smallin}{\smallerrel{\in}}
+\newcommand{\smallnotin}{\smallerrel{\notin}}
+
+\newcommand*{\medcap}{\mathbin{\scalebox{1.25}{\ensuremath{\cap}}}}%
+\newcommand*{\medcup}{\mathbin{\scalebox{1.25}{\ensuremath{\cup}}}}%
+
+%Подпись символов снизу
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+
+\begin{document}
+\lhead{Математический анализ - I}
+\chead{Шапошников С.В.}
+\rhead{Лекция - 25}
+
+\section*{Формула Тейлора. Ряды Тейлора}
+
+\begin{theorem}
+	Если $f$ $n$-раз дифференцируема в точке $a$, то 
+	$$f(x) = \sum\limits_{k = 0}^{n}\dfrac{f^{(k)}(a)(x-a)^k}{k!} + \alpha(x){\cdot}(x-a)^n \wedge \lim\limits_{x \to a} \alpha(x) = 0$$
+\end{theorem}
+\begin{proof}
+	Рассмотрим функцию $g(x) = f(x) - \sum\limits_{k = 0}^{n}\tfrac{f^{(k)}(a)(x-a)^k}{k!}, \, g(a) = g^\prime(a) = \dotsc = g^{(n)}(a) = 0$. Надо доказать, что $\lim\limits_{x \to a}\tfrac{g(x)}{(x-a)^n} = 0$. В пределе неопределенность $\tfrac{0}{0}\Rightarrow$ поскольку функция $f$ $n$-раз дифференцируема, то $(n-1)$ производная будет определена в некоторой окрестности точки $a$ и мы используем теорему Лопиталя до порядка $(n-1)$, а затем обычное определение производной в точке $a$:
+	$$\lim\limits_{x \to a}\dfrac{g(x)}{(x-a)^n} = \lim\limits_{x \to a}\dfrac{g^\prime(x)}{n(x-a)^{n-1}} = \dotsc = \lim\limits_{x \to a}\dfrac{g^{(n-1)}(x)}{n!(x-a)} = \lim\limits_{x \to a}\dfrac{g^{(n-1)}(x) -g^{(n-1)}(a) }{n!(x-a)}= \dfrac{1}{n!}g^{(n)}(a) = 0$$
+\end{proof}
+\begin{rem}
+	Функция $n$ раз дифференцируема в точке $a \Leftrightarrow$ в окрестности точки $a$ существуют все производные до $(n-1)$-го порядка и $(n-1)$-ая производная в точке $a$ - дифференцируема.
+\end{rem}
+
+\subsection*{$O$-символика и $o$-символика}
+Пусть функции $f$ и $g$ определены в проколотой окрестности точки $a$ $(\MU^\prime(a))$. 
+\begin{defn}
+	\textbf{$\bar{o}$-малое}: Если $f(x) = h(x){\cdot}g(x), \, \forall x \in \MU^\prime(a) \wedge \lim\limits_{x\to a}h(x) = 0 \Rightarrow f(x) = \bar{o}(g(x))$, при $x \to a$.
+\end{defn}
+
+\begin{defn}
+	\textbf{$\ubar{O}$-большое}: Если $f(x) = h(x){\cdot}g(x), \, \forall x \in \MU^\prime(a) \wedge \exists \, C >0 \colon |h(x)| \leq C, \, \forall x \in \MU^\prime(a) \Rightarrow$ \\
+	$\Rightarrow f(x) = \ubar{O}(g(x))$, при $x \to a$.
+\end{defn}
+
+\begin{rem}
+	Если хотим сказать, что функция $f$ получилась из функции $g$, \uline{умножением на ограниченную функцию} $\Rightarrow$ используем $\ubar{O}$-символику.
+	
+	Если хотим сказать, что функция $f$ получилась из функции $g$, \uline{умножением на функцию стремящуюся к нулю} $\Rightarrow$ используем $\bar{o}$-символику.
+\end{rem}
+
+\textbf{Пример}: $f(x) = x^3, \, g(x) = x^2, \, a = 0 \Rightarrow f = \bar{o}(g)$ при $x \to 0$, так как $f(x) = x{\cdot}g(x)$, где $x \to 0$. Надо заметить, что $g \neq\bar{o}(f)$.
+
+\begin{defn}
+	Утверждение последней теоремы записывается так:
+	$$f(x) = \sum\limits_{k = 0}^{n}\dfrac{f^{(k)}(a)(x-a)^k}{k!} + \underset{x \to a}{\bar{o}((x-a)^n)}$$
+	этот вид называется \uwave{формулой Тейлора с остаточным членом в форме Пеано}.
+\end{defn}
+
+\textbf{Пример}: $f(x) = e^x, \, a= 0$; Производные экспоненты\\
+$(e^x)^{(n)} = e^x \Rightarrow$ 
+$$e^x = \sum\limits_{k = 0}^{n}\dfrac{x^k}{k!} + \underset{x \to 0}{\bar{o}(x^n)}$$
+
+\textbf{Пример}: $f(x) = \sin{x}, \, a= 0$; Производные синуса: \\
+$(\sin{x})^{(0)} = \sin{x}, \, (\sin{x})^\prime = \cos{x}, \, (\sin{x})^{\prime\prime} = -\sin{x}, \, (\sin{x})^{(3)} = -\cos{x}, \, (\sin{x})^{(4)} = \sin{x} \Rightarrow $ \\
+$$\sin{x} = \sum\limits_{k = 0}^{n}\dfrac{(-1)^{k}x^{2k+1}}{(2k+1)!} + \underset{x \to 0}{\bar{o}(x^{2n+2})}$$
+
+\textbf{Пример}: $f(x) = \cos{x}, \, a= 0$; Производные косинуса: \\
+$(\cos{x})^{(0)} = \cos{x}, \, (\cos{x})^\prime = -\sin{x}, \, (\cos{x})^{\prime\prime} = -\cos{x}, \, (\cos{x})^{(3)} = \sin{x}, \, (\cos{x})^{(4)} = \cos{x}\Rightarrow$\\  
+$$\cos{x} = \sum\limits_{k = 0}^{n}\dfrac{(-1)^{k}x^{2k}}{(2k)!} + \underset{x \to 0}{\bar{o}(x^{2n+1})}$$
+
+\textbf{Пример}: $f(x) = \ln{(1 + x)}, \, a= 0$; Производные логарифма: \\
+$(\ln{(1+x)})^{(0)} = \ln{(1+x)}, \, (\ln{(1+x)})^\prime = \dfrac{1}{1+x}, \, (\ln{(1+x)})^{(n)} = \dfrac{(-1)^{n+1}(n-1)!}{(1+x)^n} \Rightarrow$ 
+$$\ln{(1+x)} = \sum\limits_{k = 1}^{n}\dfrac{(-1)^{k+1}(k-1)! x^k}{k!} + \underset{x \to 0}{\bar{o}(x^n)} = \sum\limits_{k = 1}^{n}\dfrac{(-1)^{k+1} x^k}{k} + \underset{x \to 0}{\bar{o}(x^n)}$$
+
+\textbf{Пример}: $f(x) = (1 + x)^\alpha, \, \alpha \in \MR, \, a = 0$; Производные логарифма: \\
+$((1 + x)^\alpha)^{(0)} = (1 + x)^\alpha, \, ((1 + x)^\alpha)^\prime = \alpha(1+x)^{\alpha-1}, \, ((1 + x)^\alpha)^{(n)} = \alpha(\alpha-1){\cdot}\dotsc{\cdot}(\alpha - n + 1)(1+x)^{\alpha-n} \Rightarrow$ 
+$$(1 + x)^\alpha = 1 + \alpha x + \tfrac{\alpha(\alpha-1)}{2}x^2 + \dotsc + \tfrac{\alpha(\alpha-1)\dotsc(\alpha -n + 1)}{n!}x^n + \underset{x \to 0}{\bar{o}(x^n)}, \, \alpha \in \MR$$
+
+Мы пока мало, что знаем про остаточный член в формуле Тейлора. Хотелось бы выяснить его более понятный вид.
+
+\begin{theorem}\textbf{(формула Тейлора с остаточным членом в общей форме)}
+	Пусть $f$ $n$-раз дифференцируема в каждой точке отрезка $[a,x]$. Функция $f^{(n)}$ - непрерывна на $[a,x]$ и дифференцируема на интервале $(a,x)$. Пусть функция $g$ - непрерывна на отрезке $[a,x]$ и дифференцируема на интервале $(a,x)$, причем $g^\prime \neq 0$ на $(a,x)$. Тогда $\exists \, c \in (a,x)$:
+	$$f(x) = \sum\limits_{k = 0}^{n}\dfrac{f^{(k)}(a)(x-a)^k}{k!} + r_n(x,a)\text{, где } r_n(x,a) = \dfrac{f^{(n+1)}(c)(g(x) - g(a))(x-c)^n}{n! g^\prime(c)} $$
+\end{theorem} 
+\begin{rem}
+	Порядок $[a,x]$ здесь не важен, то есть возможно как $[a,x]$, так и $[x,a]$. 
+\end{rem}
+\uline{\textbf{Идея}}: Применить теорему Коши к функциям $g(x)$ и $F(t) = f(x) - \displaystyle \sum\limits_{k = 0}^{n}\dfrac{f^{(k)}(t)(x-t)^k}{k!}$.
+\begin{proof}
+	Пусть $a,\, x$ - зафиксированы, $t \in [a,x] \vee t \in (a,x)$ - меняется. $F(t) = f(x) - \displaystyle\sum\limits_{k = 0}^{n}\dfrac{f^{(k)}(t)(x-t)^k}{k!}$. Функция $f(x)$ $n$ раз дифференцируема и её производная, вплоть до $n$-го порядка, непрерывна на отрезке $[a,x] \Rightarrow F(t)$ - непрерывна на отрезке $[a,x]$. Внутри, на интервале $(a,x)$, у функции $f$ есть производная до $(n+1)$-го порядка $\Rightarrow$ можно продифференцировать $F(t)$ по $t$. Тогда по теореме Коши: 
+	$$\exists \, c \in (a,x)\colon \dfrac{F(x) - F(a)}{g(x) - g(a)} = \dfrac{F^\prime(c)}{g^\prime(c)}$$	
+	Заметим, что $F(x) = f(x) - f(x) = 0, \, F(a) = f(x) - \sum\limits_{k = 0}^{n}\dfrac{f^{(k)}(a)(x-a)^k}{k!}$, тогда:
+	$$f(x) - \sum\limits_{k = 0}^{n}\dfrac{f^{(k)}(a)(x-a)^k}{k!} = -\dfrac{F^\prime(c)(g(x) - g(a))}{g^\prime(c)}$$
+	Найдем $F^\prime(c)$:
+	$$F^\prime(t) = -f^\prime(t) - f^{\prime\prime}(t)(x-t)  + f^\prime(t) - \dfrac{f^{\prime\prime\prime}(t)(x-t)^2}{2!} + f^{\prime\prime}(t)(x-t) - \dotsc = -\dfrac{f^{(n+1)}(t)(x-t)^n}{n!}$$
+	Подставляя полученный результат, получим требуемое:
+	$$f(x) - \sum\limits_{k = 0}^{n}\dfrac{f^{(k)}(a)(x-a)^k}{k!} = -\dfrac{F^\prime(c)(g(x) - g(a))}{g^\prime(c)} = \dfrac{f^{(n+1)}(c)(x-c)^n(g(x) - g(a))}{n!g^\prime(c)}$$
+\end{proof}
+
+Получив формулу Тейлора с остаточным членом в общей форме, хочется поподставлять разные функции $g(x)$. Рассмотрим конкретные случаи функции $g(x)$.
+
+\begin{corollary}\textbf{(остаточный член в форме Коши)}
+	$$g(t) = x -t \Rightarrow r_n(a,x) = \dfrac{f^{(n+1)}(c)(x-c)^n(x-a)}{n!}$$
+\end{corollary}
+\begin{proof}
+	$g^\prime(t) = -1, \, g(x) = 0, \, g(a) = x - a \Rightarrow$ 
+	$$r_n(a,x) = \dfrac{f^{(n+1)}(c)(x-c)^n(0-(x-a))}{-n!} = \dfrac{f^{(n+1)}(c)(x-c)^n(x-a)}{n!}$$
+\end{proof}
+
+\begin{corollary}\textbf{(остаточный член в форме Лагранжа)}\\
+	$$g(t) = (x - t)^{n+1} \Rightarrow r_n(a,x) = \dfrac{f^{(n+1)}(c)(x-a)^{n+1}}{(n+1)!}$$
+\end{corollary}
+\begin{proof}
+	$g^\prime(t) = (n+1)(x-t)^n(-1), \, g(x) = 0, \, g(a) = (x - a)^{n+1} \Rightarrow$ $$r_n(a,x) = \dfrac{f^{(n+1)}(c)(x-c)^n(0-(x-a)^{n+1})}{-n!(n+1)(x-c)^n} = \dfrac{f^{(n+1)}(c)(x-a)^{n+1}}{(n+1)!}$$
+\end{proof}
+
+\textbf{Пример}: $f(x) = e^x, \, a= 0$,  Рассмотрим остаточный член в форме Лагранжа: 
+$$e^x = \sum\limits_{k = 0}^{n}\dfrac{x^k}{k!} + \dfrac{e^c x^{n+1}}{(n+1)!}, \, c \in (0,x) \vee c \in (x,0)$$
+где $\displaystyle \sum\limits_{k = 0}^{n}\dfrac{x^k}{k!}$ - частичная сумма. Как себя ведет остаточное слагаемое, при $n\to \infty$?
+
+$\forall x, \, \bigg|\dfrac{e^c x^{n+1}}{(n+1)!}\bigg| \leq \dfrac{e^{|x|}|x|^{n+1}}{(n+1)!} \to 0$. Тогда $\forall x$ ряд $\sum\limits_{k = 0}^{n}\dfrac{x^k}{k!}$ сходится к $e^x$ (то есть сумма этого ряда в точности равна $e^x$). 
+
+Более того, на всяком отрезке это стремление будет равномерным: $$x \in [-A,A] \Rightarrow \bigg|\dfrac{e^c x^{n+1}}{(n+1)!}\bigg| \leq \dfrac{e^{A}A^{n+1}}{(n+1)!} \Rightarrow \sup\limits_{x \in [-A,A]}\bigg|e^x - \sum\limits_{k = 0}^{n}\dfrac{x^k}{k!}\bigg| \leq \dfrac{e^{A}A^{n+1}}{(n+1)!} \xrightarrow[n\to\infty]{} 0$$
+
+Таким образом $e^x = \displaystyle \sum\limits_{k = 0}^{\infty}\dfrac{x^k}{k!}$ и ряд сходится равномерно на всяком отрезке $[-A,A]$.
+
+\textbf{Пример}: $f(x) = \ln(1+x), \, a= 0$,  Рассмотрим остаточный член в форме Лагранжа: 
+$$\ln(1+x) = \sum\limits_{k = 0}^{n}\dfrac{(-1)^{k+1} x^k}{k} + \dfrac{(-1)^{n+2}n! x^{n+1}}{(n+1)!(1+c)^{n+1}} = \sum\limits_{k = 0}^{n}\dfrac{(-1)^{k+1} x^k}{k} + \dfrac{(-1)^{n}x^{n+1}}{(n+1)(1+c)^{n+1}}, \, c \in (0,x) \vee c \in (x,0)$$ 
+ 
+Если $x > 1$, то ряд $ \displaystyle \sum\limits_{k = 0}^{n}\dfrac{(-1)^{k+1} x^k}{k}$ расходится.
+
+Если $0 < x \leq 1$, тогда $c \in(0,x), \, c > 0, \, (1 + c) > 1  \Rightarrow \bigg|\dfrac{(-1)^{n}x^{n+1}}{(n+1)(1+c)^{n+1}}\bigg| \leq \dfrac{1}{n+1} \to 0$.  Тогда $\forall x$ ряд $\displaystyle \sum\limits_{k = 0}^{n}\dfrac{(-1)^{k+1} x^k}{k}$ сходится к $\ln(1+x)$ (то есть сумма этого ряда в точности равна $\ln(1+x)$). 
+
+Если $-1 < x < 0$, тогда $c \in (x,0),\, c < 0$, но мы не можем сказать как соотносится $x$ и $c - (-1) = 1+c \Rightarrow$ также не можем ничего сказать про остаточный член $\dfrac{(-1)^n}{n+1}\bigg( \dfrac{x}{1+c}\bigg)^{n+1} \Rightarrow$ рассмотрим остаточный член в форме Коши:
+$$\dfrac{(-1)^n n!}{(1+c)^{n+1}}\dfrac{(x-c)^n x}{n!} = \dfrac{(-1)^n (x - c)^n x}{(1+c)^{n+1}} = \dfrac{(-1)^n (x - c)^n}{(1+c)^{n}}{\cdot}\dfrac{x}{(1+c)}$$
+$c > x \Rightarrow 1+c > 1 + x \Rightarrow \dfrac{x}{1+c}\leq \dfrac{|x|}{|1+x|}$, так как $c< 0 \wedge x <0 \wedge 1 > |x| > |c| \Rightarrow \bigg|\dfrac{x-c}{1+c} \bigg| = \dfrac{|x| - |c|}{1 - |c|} = 1 - \dfrac{1 - |x|}{1-|c|} \leq 1 - (1-|x|) = |x| \Rightarrow
+$ оценим остаточный член:
+$$
+\bigg|\dfrac{(-1)^n (x - c)^n x}{(1+c)^{n+1}}\bigg|  = \bigg|\dfrac{(-1)^n (x - c)^n}{(1+c)^{n}}{\cdot}\dfrac{x}{(1+c)}\bigg|\leq \dfrac{|x|}{|1+x|}|x|^n \xrightarrow[n \to \infty]{} 0
+$$
+
+Таким образом $\forall x \in (-1,1], \, \ln{(1+x)} = \displaystyle \sum\limits_{k = 0}^{\infty}\dfrac{(-1)^{k+1} x^k}{k}$
+
+\begin{rem}
+	Ряд Лейбница: $\ln{2} =\displaystyle \sum\limits_{k = 0}^{\infty}\dfrac{(-1)^{k+1}}{k}$. Ряд сходится, но не сходится ряд из его модулей.
+\end{rem}
+
+\end{document}
